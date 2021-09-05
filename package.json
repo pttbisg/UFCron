@@ -1,0 +1,18 @@
+{
+  "name": "ebs_deployment",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js --inspect"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "airtable": "^0.11.1",
+    "axios": "^0.21.3",
+    "backendless": "^6.2.23",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
