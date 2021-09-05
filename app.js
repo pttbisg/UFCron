@@ -8,7 +8,7 @@ const UrbanFox = require("./services/UrbanFox");
 
 app.get('/', async (request, response) => {
     const airtable = new Airtable();
-    const undeliveredTrackingOrders = await airtable.getUndeliveredOrders();
+    const undeliveredTrackingOrders = await airtable.getUndeliveredOrders(500);
 
     const updatedRecords = [];
     const urbanFox = new UrbanFox();

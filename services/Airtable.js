@@ -54,15 +54,16 @@ class Airtable {
 
     /**
      *
+     * @param maxRecords
      * @returns {Promise<{id: *, TrackingId: *}[]>}
      */
-    async getUndeliveredOrders() {
+    async getUndeliveredOrders(maxRecords) {
         const baseTable = "Main Shopify Orders (PTTB)";
         const filter = "AND( NOT({LastUpdatedLogisticsStatus}='Delivered'), NOT({TrackingNum}='') )"
         return (await this.getRecords({
             baseTable,
             filter,
-            maxRecords: 1
+            maxRecords: maxRecords
         })).map((record) => {
             return {
                 id: record['id'],
